@@ -1,4 +1,4 @@
-file = open("crypted.txt")
+file = open("crypted1.txt")
 text = file.read()
 ##text = text.lower()
 output = open("open1.txt", 'w')
@@ -42,49 +42,10 @@ print(key)
 from decoder import decode
 decode(text, key)
 output.close()
-##m=0
-##while m!=-1:
-##    decoded = open("decoded text.txt").read()
-##    print("\n")
-##    print(text[:24])
-##    print(decoded[:24])
-##    print("\n")
-##    print(text[24:48])
-##    print(decoded[25:49])
-##    print("\n")
-##    print(text[48:72])
-##    print(decoded[50:74])
-
-##    y=input()
-##    x=input()
-##    y=ord(y)-ord('а')
-##    x=ord(x)-ord('а')
-##    d = y-x
-##    if d<0:
-##        d+=32
-##    d=chr(d+ord('а'))
-##    print(d)
 key = input()
 decode(text, key)
-##while 1==1:
-##    l = input()
-##    l = int(l)
-##    if l > klen:
-##        print("error")
-##    else:
-##        if l==-1:
-##            nkey=key
-##        else:
-##            y=frec(t[l-1])
-##            x=ord('а')-ord('а')
-##            d = y-x
-##            if d<0:
-##                d+=32
-##            d=chr(d+ord('а'))
-##            print(d)
-##            nkey.replace(nkey[l-1], d)
-##            ##nkey[l-1]=d
-##            print(nkey)
-
+b = frec(t[3])-(ord(key[3])-ord('а'))
+b = chr(b+ord('а'))
+print("Most frequent letter in cyphertext[4] is ", b)
 output.close()
 print("done")
