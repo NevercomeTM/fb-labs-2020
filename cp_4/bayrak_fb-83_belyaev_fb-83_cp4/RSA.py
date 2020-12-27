@@ -77,11 +77,11 @@ def Verify(message, public_key):
     
 class Abonent:
 
-    def __init__(self):
+    def __init__(self, klen):
         print("p")
-        self.p = GeneratePrimeNumber(pow(2, 256), pow(2, 257))
+        self.p = GeneratePrimeNumber(pow(2, klen), pow(2, klen+1))
         print("q")
-        self.q = GeneratePrimeNumber(pow(2, 256), pow(2, 257))
+        self.q = GeneratePrimeNumber(pow(2, klen), pow(2, klen+1))
         self.public_key = 0
         self.private_key = 0
 
@@ -127,8 +127,10 @@ class Abonent:
         print("m = ", m)
         print("s = ", s)
         print("Verified?: ", Verify([m, s], key))
-a = Abonent()
-b = Abonent()
+print('Enter lenght of key')
+klen = int(input())
+a = Abonent(klen)
+b = Abonent(klen)
 if a.p*a.q<b.p*b.q:
     c=a
     a=b
